@@ -1,3 +1,6 @@
-body {
-  padding-top: 70px;  /* Move body of page below navbar. */
+
+.header-image{
+  background-image: url("../images/computer-keyboard-in-black-photo-ilker-sxc-hu-e1342078711779.jpg");
+  height: 200px;
+  background-size: cover;
 }
