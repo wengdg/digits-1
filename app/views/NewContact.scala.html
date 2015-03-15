@@ -1,21 +1,34 @@
-@(message: String)
+@(contactForm: Form[views.formdata.ContactFormData]))
+@import views.html.helper._
 
 @Main("New Contact") {
   <div class="container">
-    <form class="form-horizontal">
-      <div class="form-group">
-        <label for="first">First</label>
-        <input type="text" class="form-control" id="first" placeholder="First Name">
-      </div>
-      <div class="form-group">
-        <label for="last">Last</label>
-        <input type="text" class="form-control" id="last" placeholder="Last Name">
-      </div>
-      <div class="form-group">
-        <label for="digits">Digits</label>
-        <input type="text" class="form-control" id="digits" placeholder="555-555-1111">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+  @form(routes.Application.postContact(), 'class -> "form-horizontal") {
+    <div class="form-group">
+      <label for="first">First</label>
+      <input type="text" class="form-control"
+      name = "@contactForm("firstName").name"
+      id = "@contactForm("firstName").id"
+      value = "@contactForm("firstName").value"
+      placeholder="First Name">
+    </div>
+    <div class="form-group">
+      <label for="last">Last</label>
+      <input type="text" class="form-control"
+      name = "@contactForm("lastName").name"
+      id = "@contactForm("lastName").id"
+      value = "@contactForm("lastName").value"
+      placeholder="Last Name">
+    </div>
+    <div class="form-group">
+      <label for="digits">Digits</label>
+      <input type="text" class="form-control"
+      name = "@contactForm("telephone").name"
+      id = "@contactForm("telephone").id"
+      value = "@contactForm("telephone").value"
+      placeholder="555-555-1111">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  }
   </div>
 }
