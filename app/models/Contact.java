@@ -8,15 +8,19 @@ public class Contact {
   private String firstName;
   private String lastName;
   private String telephone;
+  private long id;
+
 
   /**
    * Creates a model of a contact.
    *
+   * @param id        The id.
    * @param firstName The first name.
    * @param lastName  The second name.
    * @param telephone The telephone number.
    */
-  public Contact(String firstName, String lastName, String telephone) {
+  public Contact(long id, String firstName, String lastName, String telephone) {
+    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.telephone = telephone;
@@ -47,5 +51,14 @@ public class Contact {
    */
   public String getTelephone() {
     return telephone;
+  }
+
+  /**
+   * Gets the id.
+   *
+   * @return Id.
+   */
+  public long getId() {
+    return id;
   }
 }
