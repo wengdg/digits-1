@@ -33,6 +33,4 @@ public class ApplicationTest {
     assertThat(contentType(html)).isEqualTo("text/html");
     assertThat(contentAsString(html)).contains("Current");
   }
-
-
 }
